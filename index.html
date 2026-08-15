@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Happy Birthday Yuki ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: #fff;
+      overflow-x: hidden;
+
+      background:
+        radial-gradient(
+          circle at 20% 15%,
+          rgba(255, 130, 180, 0.18),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 25%,
+          rgba(170, 120, 255, 0.16),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 50% 100%,
+          rgba(255, 80, 150, 0.12),
+          transparent 35%
+        ),
+        linear-gradient(
+          145deg,
+          #120817 0%,
+          #251026 45%,
+          #100713 100%
+        );
+    }
+
+    /* =========================
+       BACKGROUND STARS
+    ========================== */
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+
+      background-image:
+        radial-gradient(#fff 1px, transparent 1px),
+        radial-gradient(#fff 1px, transparent 1px);
+
+      background-size:
+        90px 90px,
+        130px 130px;
+
+      background-position:
+        10px 20px,
+        50px 70px;
+
+      opacity: 0.2;
+
+      animation: drift 20s linear infinite;
+    }
+
+    @keyframes drift {
+      to {
+        background-position:
+          100px 110px,
+          170px 160px;
+      }
+    }
+
+    /* =========================
+       PAGE
+    ========================== */
+
+    .wrap {
+      min-height: 100vh;
+
+      display: grid;
+      place-items: center;
+
+      padding: 40px 16px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    /* =========================
+       CARD
+    ========================== */
+
+    .card {
+      width: min(720px, 100%);
+
+      padding: 48px 34px 40px;
+
+      text-align: center;
+
+      border: 1px solid rgba(255, 255, 255, 0.14);
+
+      border-radius: 32px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.09),
+          rgba(255, 255, 255, 0.035)
+        );
+
+      backdrop-filter: blur(20px);
+
+      box-shadow:
+        0 35px 100px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+      animation: appear 1.2s ease both;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* =========================
+       TOP HEART
+    ========================== */
+
+    .heart {
+      font-size: 54px;
+
+      filter:
+        drop-shadow(0 0 10px rgba(255, 100, 170, 0.5))
+        drop-shadow(0 0 25px rgba(255, 100, 170, 0.25));
+
+      animation: beat 1.5s infinite;
+    }
+
+    @keyframes beat {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      15% {
+        transform: scale(1.15);
+      }
+
+      30% {
+        transform: scale(1);
+      }
+    }
+
+    /* =========================
+       SMALL TITLE
+    ========================== */
+
+    .small {
+      margin-top: 16px;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    /* =========================
+       MAIN TITLE
+    ========================== */
+
+    h1 {
+      margin: 14px 0 8px;
+
+      font-size: clamp(40px, 8vw, 70px);
+
+      line-height: 1;
+
+      font-weight: 400;
+
+      letter-spacing: -2px;
+
+      text-shadow:
+        0 0 25px rgba(255, 150, 200, 0.2);
+    }
+
+    /* =========================
+       YUKI
+    ========================== */
+
+    .name {
+      color: #ffc2dc;
+
+      font-size: 25px;
+
+      letter-spacing: 3px;
+
+      text-shadow:
+        0 0 20px rgba(255, 100, 170, 0.3);
+
+      margin-top: 10px;
+    }
+
+    /* =========================
+       PHOTO HEART
+    ========================== */
+
+    .photo-heart {
+      width: 230px;
+      height: 210px;
+
+      margin: 30px auto 22px;
+
+      position: relative;
+
+      animation:
+        photoAppear 1.4s ease both,
+        photoHeartBeat 3s ease-in-out infinite;
+    }
+
+    @keyframes photoAppear {
+      from {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes photoHeartBeat {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.035);
+      }
+    }
+
+    /*
+      Lớp ánh sáng phía sau trái tim
+    */
+
+    .photo-heart::before {
+      content: "";
+
+      position: absolute;
+
+      inset: -12px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(255, 130, 180, 0.35),
+          transparent 65%
+        );
+
+      filter: blur(12px);
+
+      z-index: -2;
+    }
+
+    /*
+      Viền trái tim
+    */
+
+    .photo-heart::after {
+      content: "";
+
+      position: absolute;
+
+      inset: -6px;
+
+      background: linear-gradient(
+        135deg,
+        #ffd0e1,
+        #ff79ae,
+        #d78cff,
+        #ffd0e1
+      );
+
+      background-size: 300% 300%;
+
+      animation: gradientMove 5s ease infinite;
+
+      clip-path: path(
+        "M115 200
+        C98 178 15 130 15 65
+        C15 20 70 5 115 50
+        C160 5 215 20 215 65
+        C215 130 132 178 115 200 Z"
+      );
+
+      z-index: -1;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /*
+      Ảnh bên trong trái tim
+    */
+
+    .photo-heart img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      /*
+        Nếu muốn đổi vị trí ảnh,
+        có thể dùng:
+        object-position: center;
+      */
+
+      object-position: center;
+
+      clip-path: path(
+        "M115 200
+        C98 178 15 130 15 65
+        C15 20 70 5 115 50
+        C160 5 215 20 215 65
+        C215 130 132 178 115 200 Z"
+      );
+
+      filter: saturate(1.05);
+
+      transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+    }
+
+    .photo-heart:hover img {
+      transform: scale(1.05);
+
+      filter:
+        saturate(1.1)
+        brightness(1.05);
+    }
+
+    /* =========================
+       DIVIDER
+    ========================== */
+
+    .line {
+      width: 80px;
+      height: 1px;
+
+      margin: 24px auto 30px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.6),
+          transparent
+        );
+    }
+
+    /* =========================
+       MESSAGE
+    ========================== */
+
+    .message {
+      max-width: 610px;
+
+      margin: auto;
+
+      text-align: left;
+
+      font-size: 18px;
+
+      line-height: 1.85;
+
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .message p {
+      margin: 0 0 20px;
+    }
+
+    .message p:first-child {
+      font-size: 21px;
+
+      color: #ffd1e2;
+
+      text-align: center;
+
+      margin-bottom: 28px;
+    }
+
+    /* =========================
+       ENDING
+    ========================== */
+
+    .ending {
+      margin-top: 34px;
+
+      font-size: 22px;
+
+      line-height: 1.8;
+
+      color: #ffd1e2;
+
+      text-shadow:
+        0 0 20px rgba(255, 100, 170, 0.2);
+    }
+
+    /* =========================
+       BUTTON
+    ========================== */
+
+    button {
+      margin-top: 28px;
+
+      border: 0;
+
+      border-radius: 999px;
+
+      padding: 14px 25px;
+
+      color: #351124;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffd9e7,
+          #ffb4d0
+        );
+
+      font-family: Arial, sans-serif;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 12px 30px rgba(255, 100, 170, 0.25);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.03);
+
+      box-shadow:
+        0 16px 40px rgba(255, 100, 170, 0.38);
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    /* =========================
+       FLOATING HEARTS
+    ========================== */
+
+    .floating {
+      position: fixed;
+
+      bottom: -40px;
+
+      font-size: 22px;
+
+      opacity: 0.75;
+
+      animation:
+        floatUp linear forwards;
+
+      pointer-events: none;
+
+      z-index: 10;
+    }
+
+    @keyframes floatUp {
+      to {
+        transform:
+          translateY(-110vh)
+          rotate(25deg);
+
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 600px) {
+
+      .wrap {
+        padding: 20px 12px;
+      }
+
+      .card {
+        padding: 38px 21px 30px;
+
+        border-radius: 25px;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .name {
+        font-size: 22px;
+      }
+
+      .photo-heart {
+        width: 205px;
+        height: 188px;
+      }
+
+      .message {
+        font-size: 16px;
+
+        line-height: 1.8;
+      }
+
+      .message p:first-child {
+        font-size: 19px;
+      }
+
+      .ending {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="stars"></div>
+
+  <main class="wrap">
+
+    <section class="card">
+
+      <!-- Trái tim phía trên -->
+      <div class="heart">❤️</div>
+
+      <div class="small">
+        A little message for you
+      </div>
+
+      <h1>
+        Happy Birthday
+      </h1>
+
+      <div class="name">
+        Yuki
+      </div>
+
+
+      <!-- =========================
+           ẢNH TRÁI TIM
+           Đặt yuki.jpg cùng thư mục
+           với index.html
+      ========================== -->
+
+      <div class="photo-heart">
+
+        <img
+          src="yuki.jpg"
+          alt="Ảnh của Yuki"
+        />
+
+      </div>
+
+
+      <div class="line"></div>
+
+
+      <!-- =========================
+           LỜI NHẮN
+      ========================== -->
+
+      <div class="message">
+
+        <p>
+          Chúc iu sinh nhật vui vẻ nhé ❤️
+        </p>
+
+        <p>
+          Thêm một tuổi mới rồi, anh chỉ mong iu luôn vui vẻ,
+          mạnh khỏe và gặp được thật nhiều điều tốt đẹp.
+          Cảm ơn iu vì thời gian qua đã luôn ở bên anh,
+          quan tâm anh và cùng anh trải qua cả những lúc
+          vui lẫn những lúc không vui.
+        </p>
+
+        <p>
+          Anh biết đôi khi anh vẫn còn vô tâm,
+          còn nhiều thứ chưa làm tốt và có thể cũng có
+          những lúc khiến em buồn. Nhưng anh thật sự
+          trân trọng em và những gì hai đứa đang có.
+          Anh không biết sau này mọi thứ sẽ như thế nào,
+          nhưng hiện tại anh rất vui vì người bên cạnh
+          anh là em.
+        </p>
+
+        <p>
+          Tuổi mới rồi, cứ vui vẻ và làm những điều em thích nhé.
+          Còn những chuyện khác thì cứ từ từ,
+          mình cùng nhau cố gắng.
+        </p>
+
+      </div>
+
+
+      <!-- =========================
+           LỜI KẾT
+      ========================== -->
+
+      <div class="ending">
+
+        Chúc mừng sinh nhật cô gái của anh ❤️
+        <br>
+
+        Yêu em.
+
+      </div>
+
+
+      <!-- =========================
+           BUTTON
+      ========================== -->
+
+      <button onclick="sendLove()">
+        Bấm vào đây ❤️
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    function sendLove() {
+
+      for (let i = 0; i < 25; i++) {
+
+        const el = document.createElement("div");
+
+        el.className = "floating";
+
+        el.textContent =
+          Math.random() > 0.25
+            ? "❤️"
+            : "✨";
+
+        el.style.left =
+          Math.random() * 100 + "vw";
+
+        el.style.animationDuration =
+          (4 + Math.random() * 4) + "s";
+
+        el.style.fontSize =
+          (16 + Math.random() * 20) + "px";
+
+        el.style.animationDelay =
+          Math.random() * 0.8 + "s";
+
+        document.body.appendChild(el);
+
+        setTimeout(() => {
+          el.remove();
+        }, 9000);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
